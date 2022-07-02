@@ -24,27 +24,11 @@ function App() {
 
   return (
     <div className="App">
-      <header>valstock</header>
+      <header className="header">
+        <div className="logo">valstock</div>
+        <div className="my-albums">My albums</div>
+      </header>
       <ImageGallery allImages={allImages} />
-      {/* <section className="hero-section">
-        <h1 className="main-text">Join our stock community!</h1>
-        <p>Download free photos and videos powered by the best photographers</p>
-        <form action="/" method="GET" className="login-form">
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            required
-            placeholder="Enter username here..."
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="Enter password here..."
-          ></input>
-        </form>
-      </section> */}
     </div>
   );
 }

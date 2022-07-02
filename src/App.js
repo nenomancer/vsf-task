@@ -1,23 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import ImageGallery from "./components/ImageGallery";
+import "./App.css";
 
 function App() {
+  const [allImages, setAllImages] = useState([]);
+
+  const fetchImages = () => {
+    try {
+      return fetch(`https://picsum.photos/v2/list/`, {
+        method: "GET",
+      })
+        .then((response) => response.json())
+        .then((data) => setAllImages(data));
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
+  };
+
+  useEffect(() => {
+    fetchImages();
+  }, []);
+
+  // console.log(allImages);
+
+  console.log(allImages);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header>valstock</header>
+      <ImageGallery allImages={allImages} />
+      {/* <section className="hero-section">
+        <h1 className="main-text">Join our stock community!</h1>
+        <p>Download free photos and videos powered by the best photographers</p>
+        <form action="/" method="GET" className="login-form">
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            required
+            placeholder="Enter username here..."
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter password here..."
+          ></input>
+        </form>
+      </section> */}
     </div>
   );
 }

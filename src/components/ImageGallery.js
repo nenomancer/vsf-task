@@ -1,9 +1,10 @@
 import React from "react";
 import "./ImageGallery.css";
+import ImageModal from "./ImageModal";
 const ImageGallery = (props) => {
   return (
     <div className="gallery-container">
-      {/* <img src={allImages[0].url} /> */}
+      <ImageModal />
       {props.allImages.map((image) => {
         console.log(`IMAGE URL: ${image.download_url}`);
         return (

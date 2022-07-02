@@ -22,7 +22,7 @@ const ImageGallery = (props) => {
         {props.allImages.map((image, index) => {
           return (
             <div
-              className={`image-container ${index % 2 === 0 && 'tall'}`}
+              className={`image-container ${index % 2 === 0 && "tall"}`}
               onClick={imageClickHandler}
               key={image.id}
             >

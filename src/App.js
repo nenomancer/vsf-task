@@ -22,9 +22,6 @@ function App() {
     fetchImages();
   }, []);
 
-  // console.log(allImages);
-
-  console.log(allImages);
   return (
     <div className="App">
       <header>valstock</header>

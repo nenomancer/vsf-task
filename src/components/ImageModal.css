@@ -1,6 +1,7 @@
 .modal-container {
-  width: var(--width);
+  /* width: var(--width); */
   height: calc(100vh - var(--header-height));
+  
   z-index: 10;
   background-color: white;
 
@@ -20,7 +21,7 @@
   position: absolute;
   font-size: 36px;
   top: 50%;
-  transform: translateY(-150%);
+  transform: translateY(-50%);
   cursor: pointer;
 }
 
@@ -37,7 +38,7 @@
   height: 100%;
   width: 100%;
 
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .close-button {
@@ -70,4 +71,14 @@
   font-size: 14px;
   color: grey;
   margin-bottom: var(--gap);
+}
+
+.backdrop {
+  display: block;
+  position: absolute;
+  left: -50%;
+  width: 100vw;
+  height: 100%;
+  background-color: white;
+  z-index: -1;
 }

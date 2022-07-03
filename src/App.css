@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+:root {
+  --header-height: 60px;
+  --width: 70vw;
+
+  --gap: 20px;
+
+  --anim-time: 150ms;
+  --anim-function: ease-in-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*::before,
+*::after {
+  scrollbar-width: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: "Lexend Deca", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  height: var(--header-height);
+  position: fixed;
+  width: 100%;
+  background-color: black;
+  color: white;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  z-index: 5;
+  margin-bottom: 2rem;
+}
+
+.header button {
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  transform: translateY(-50%);
+  margin: 0;
+  border-color: white;
+}
+
+.btn,
+.btn-inv {
+  font-size: 14px;
+  text-transform: uppercase;
+  max-width: max-content;
+  font-weight: bolder;
+  padding: 0.25rem 1.25rem;
+  cursor: pointer;
+  transition: all var(--anim-time) var(--anim-function);
+  border: 1px solid black;
+  margin: 0.5rem;
+}
+
+.btn {
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn:hover {
+  background-color: #111;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-inv {
+  color: black;
+  background-color: white;
+}
+
+.btn-inv:hover {
+  background-color: #eee;
 }

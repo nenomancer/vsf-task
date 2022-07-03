@@ -6,7 +6,6 @@ const ImageGallery = (props) => {
   const [selectedImage, setSelectedImage] = useState();
   const [showImageModal, setShowImageModal] = useState(false);
 
-
   // SET THE CLICKED IMAGE TO SHOW UP IN THE IMAGE MODAL
   const imageClickHandler = (e) => {
     console.log(e.target.attributes["author"].value);
@@ -27,9 +26,11 @@ const ImageGallery = (props) => {
       )}
       <div className="gallery-container">
         {props.allImages.map((image, index) => {
+          console.log(`INDEX: ${index}`);
           return (
             <div
-              className={`image-container ${index % 2 === 0 && "tall"}`}
+              // className={`image-container ${(index + 1) % 2 === 0 && "tall"}`}
+              className="image-container"
               onClick={imageClickHandler}
               key={image.id}
             >

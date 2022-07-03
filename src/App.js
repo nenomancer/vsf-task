@@ -7,7 +7,7 @@ function App() {
 
   const fetchImages = () => {
     try {
-      return fetch(`https://picsum.photos/v2/list/`, {
+      return fetch(`https://picsum.photos/v2/list?limit=12`, {
         method: "GET",
       })
         .then((response) => response.json())

@@ -25,11 +25,10 @@ const ImageGallery = (props) => {
         />
       )}
       <div className="gallery-container">
-        {props.allImages.map((image, index) => {
+        {props.allImages.map((image, index) => {  
           console.log(`INDEX: ${index}`);
           return (
             <div
-              // className={`image-container ${(index + 1) % 2 === 0 && "tall"}`}
               className="image-container"
               onClick={imageClickHandler}
               key={image.id}

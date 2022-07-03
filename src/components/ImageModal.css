@@ -1,17 +1,19 @@
 .modal-container {
   width: var(--width);
-  height: 80vmin;
+  height: calc(100vh - var(--header-height));
   z-index: 10;
   background-color: white;
 
   position: fixed;
-  top: 50%;
+  /* top: 50%; */
+  top: calc(var(--header-height));
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   display: grid;
   grid-template-rows: 1fr 5fr 2fr;
   align-items: center;
   justify-content: center;
+  padding: var(--gap) 0;
 }
 
 .modal-options {
@@ -21,7 +23,6 @@
 .modal-image {
   height: 100%;
   width: 100%;
-  background-color: yellow;
 
   object-fit: contain;
 }
@@ -41,15 +42,19 @@
 }
 
 .modal-image-info {
-  background-color: blue;
-  height: 100%;
+}
+
+.modal-image-info .label {
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
 .modal-image-info .author {
   font-size: 32px;
 }
 
-.modal-image-info .label {
+.modal-image-info .info {
   font-size: 14px;
-  text-transform: uppercase;
+  color: grey;
+  margin-bottom: var(--gap);
 }

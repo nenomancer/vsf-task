@@ -41,6 +41,7 @@ body {
   right: 15%;
   transform: translateY(-50%);
   margin: 0;
+  border-color: white;
 }
 
 .btn,
@@ -52,11 +53,11 @@ body {
   padding: 0.25rem 1.5rem;
   cursor: pointer;
   transition: all var(--anim-time) var(--anim-function);
-  margin: .5rem;
+  margin: 0.5rem;
+  border: 1px solid black;
 }
 
 .btn {
-  border: 1px solid white;
   background-color: black;
   color: white;
 }
@@ -66,7 +67,6 @@ body {
 }
 
 .btn-inv {
-  border: 1px solid black;
   color: black;
   background-color: white;
 }

@@ -3,7 +3,6 @@
   height: fit-content;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background-color: red;
   grid-template-columns: repeat(250px 500px);
   gap: var(--gap);
 

@@ -1,16 +1,17 @@
 .modal-container {
   width: var(--width);
   height: 80vmin;
-  /* height: calc(100vh - var(--header-height)); */
   z-index: 10;
-  background-color: bisque;
+  background-color: white;
 
   position: fixed;
-  /* top: calc(var(--header-height) + var(--gap)); */
   top: 50%;
   left: 50%;
-  /* transform: translateX(-50%); */
   transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-rows: 1fr 5fr 2fr;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-container::backdrop {
@@ -28,6 +29,7 @@
   box-sizing: content-box;
   position: absolute;
   right: 0;
+  top: 0;
   padding: 1rem;
   cursor: pointer;
   transition: all 250ms linear;
@@ -35,4 +37,17 @@
 
 .close-button:hover {
   background-color: #eee;
+}
+
+.modal-image-info {
+  background-color: blue;
+}
+
+.modal-image-info .author {
+  font-size: 32px;
+}
+
+.modal-image-info .label {
+  font-size: 14px;
+  text-transform: uppercase;
 }

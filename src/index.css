@@ -3,6 +3,9 @@
   --width: 70vw;
 
   --gap: 20px;
+
+  --anim-time: 150ms;
+  --anim-function: ease-in-out;
 }
 
 *,
@@ -10,11 +13,11 @@
 *::after {
   scrollbar-width: none;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: "Lexend Deca", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -39,10 +42,33 @@ body {
   transform: translateY(-50%);
 }
 
-.btn {
-  border: 1px solid white;
+.btn,
+.btn-inv {
   font-size: 14px;
   text-transform: uppercase;
+  max-width: max-content;
   font-weight: bolder;
   padding: 0.25rem 1.5rem;
+  cursor: pointer;
+  transition: all var(--anim-time) var(--anim-function);
+}
+
+.btn {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #111;
+}
+
+.btn-inv {
+  border: 1px solid black;
+  color: black;
+  background-color: white;
+}
+
+.btn-inv:hover {
+  background-color: #eee;
 }

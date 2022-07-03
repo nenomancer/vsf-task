@@ -5,8 +5,11 @@ import ImageModal from "./ImageModal";
 const ImageGallery = (props) => {
   const [selectedImage, setSelectedImage] = useState();
   const [showImageModal, setShowImageModal] = useState(false);
+ 
   const imageClickHandler = (e) => {
-    console.log(e.target.src);
+    console.log(e.target.attributes['author'].value);
+    console.log(e.target);
+    
     setSelectedImage(e.target);
     setShowImageModal(true);
   };
@@ -27,7 +30,12 @@ const ImageGallery = (props) => {
               onClick={imageClickHandler}
               key={image.id}
             >
-              <img className="image" src={image.download_url} alt="image" />
+              <img
+                className="image"
+                src={image.download_url}
+                alt="image"
+                author={image.author}
+              />
             </div>
           );
         })}

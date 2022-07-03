@@ -3,6 +3,7 @@ import "./ImageModal.css";
 import { MdClose } from "react-icons/md";
 
 const ImageModal = (props) => {
+  const author = props.selectedImage.attributes["author"].value;
   const closeHandler = () => {
     props.setShowImageModal(false);
   };
@@ -11,8 +12,8 @@ const ImageModal = (props) => {
       <MdClose className="close-button" onClick={closeHandler} />
       <img className="modal-image" src={props.selectedImage.src} alt="" />
       <div className="modal-image-info">
-        <span className="author">Author Name and </span>
-        <span>width x height</span>
+        <p className="author">{author}</p>
+        <p>width x height</p>
       </div>
     </div>
   );

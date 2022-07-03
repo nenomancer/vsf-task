@@ -14,13 +14,14 @@
   justify-content: center;
 }
 
-.modal-container::backdrop {
-  background-color: red;
+.modal-options {
+  /* height: 100%; */
 }
 
 .modal-image {
-  height: 80%;
+  height: 100%;
   width: 100%;
+  background-color: yellow;
 
   object-fit: contain;
 }
@@ -41,6 +42,7 @@
 
 .modal-image-info {
   background-color: blue;
+  height: 100%;
 }
 
 .modal-image-info .author {

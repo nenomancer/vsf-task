@@ -35,11 +35,12 @@ body {
   margin-bottom: 2rem;
 }
 
-.albums {
+.header button {
   position: absolute;
   top: 50%;
   right: 15%;
   transform: translateY(-50%);
+  margin: 0;
 }
 
 .btn,
@@ -51,6 +52,7 @@ body {
   padding: 0.25rem 1.5rem;
   cursor: pointer;
   transition: all var(--anim-time) var(--anim-function);
+  margin: .5rem;
 }
 
 .btn {

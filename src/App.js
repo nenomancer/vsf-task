@@ -43,7 +43,7 @@ function App() {
             />
           </svg>
         </div>
-        <button className="btn albums">My albums</button>
+        <button className="btn">My albums</button>
       </header>
       <ImageGallery allImages={allImages} />
     </div>

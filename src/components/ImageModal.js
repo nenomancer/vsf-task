@@ -20,8 +20,8 @@ const ImageModal = (props) => {
         <p className="label">Uploaded by</p>
         <p className="author">{author}</p>
         <p>width x height</p>
+        <button className="btn-inv">Go back</button>
       </div>
-      <button className="btn-inv">Go back</button>
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import React from "react";
 import "./ImageModal.css";
 
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+
 const ImageModal = (props) => {
   const author = props.selectedImage.attributes["author"].value;
 
@@ -25,13 +27,21 @@ const ImageModal = (props) => {
     if (e.key === "Escape") props.setShowImageModal(false);
   });
 
+  const navClickHandler = (e) => {
+    console.log(props.selectedImage.attributes.index.value); // WORK ON THIS FOR MODAL NAVIGATION
+  };
+
   return (
     <div className="modal-container">
       <div className="modal-options">
         <button className="btn-inv">Add to album +</button>
         <button className="btn">Download</button>
       </div>
-      <img className="modal-image" src={props.selectedImage.src} alt="" />
+      <div>
+        <IoIosArrowBack className="nav-arrow" onClick={navClickHandler} />
+        <IoIosArrowForward className="nav-arrow" />
+        <img className="modal-image" src={props.selectedImage.src} alt="" />
+      </div>
       <div className="modal-image-info">
         <p className="label">Uploaded by</p>
         <p className="author">{author}</p>

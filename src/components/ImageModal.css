@@ -2,13 +2,19 @@
   width: var(--width);
   height: 80vmin;
   /* height: calc(100vh - var(--header-height)); */
-  border: 1px solid red;
-  z-index: 10;  
+  z-index: 10;
+  background-color: bisque;
 
   position: fixed;
+  /* top: calc(var(--header-height) + var(--gap)); */
   top: 50%;
   left: 50%;
+  /* transform: translateX(-50%); */
   transform: translate(-50%, -50%);
+}
+
+.modal-container::backdrop {
+  background-color: red;
 }
 
 .modal-image {

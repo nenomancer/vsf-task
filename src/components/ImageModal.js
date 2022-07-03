@@ -6,6 +6,7 @@ const ImageModal = (props) => {
   const author = props.selectedImage.attributes["author"].value;
   const closeHandler = () => {
     props.setShowImageModal(false);
+    document.querySelector('body').style.overflowY = 'scroll';
   };
   return (
     <div className="modal-container">

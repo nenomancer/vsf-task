@@ -2,13 +2,13 @@
   --header-height: 60px;
   --width: 70vw;
 
-  scrollbar-width: none;
-  --gap: 40px;
+  --gap: 20px;
 }
 
 *,
 *::before,
 *::after {
+  scrollbar-width: none;
   box-sizing: border-box;
 }
 

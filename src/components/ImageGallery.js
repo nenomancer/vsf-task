@@ -1,15 +1,18 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "./ImageGallery.css";
 import ImageModal from "./ImageModal";
 
 const ImageGallery = (props) => {
   const [selectedImage, setSelectedImage] = useState();
   const [showImageModal, setShowImageModal] = useState(false);
- 
+
+
+  // SET THE CLICKED IMAGE TO SHOW UP IN THE IMAGE MODAL
   const imageClickHandler = (e) => {
-    console.log(e.target.attributes['author'].value);
+    console.log(e.target.attributes["author"].value);
     console.log(e.target);
-    
+    // DISABLE SCROLLING ON BODY
+    document.querySelector("body").style.overflowY = "hidden";
     setSelectedImage(e.target);
     setShowImageModal(true);
   };

@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import "./ImageGallery.css";
 import ImageModal from "./ImageModal";
+
 const ImageGallery = (props) => {
   const [selectedImage, setSelectedImage] = useState();
   const [showImageModal, setShowImageModal] = useState(false);

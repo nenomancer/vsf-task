@@ -1,0 +1,32 @@
+.gallery-container {
+  max-width: var(--width);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(150px, auto);
+  gap: var(--gap);
+  position: absolute;
+  top: calc(var(--header-height) + var(--gap));
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tall {
+  grid-row: span 2;
+}
+
+.image-container {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.image-container:hover .image {
+  transform: scale(1.2);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  object-fit: cover;
+  transition: transform 250ms ease-in-out;
+}

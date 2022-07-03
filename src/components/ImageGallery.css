@@ -20,7 +20,6 @@
 .image-container {
   cursor: pointer;
   overflow: hidden;
-  /* grid-area: short; */
 }
 
 .image-container:nth-child(even) {

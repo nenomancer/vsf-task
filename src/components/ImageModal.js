@@ -27,9 +27,18 @@ const ImageModal = (props) => {
     if (e.key === "Escape") props.setShowImageModal(false);
   });
 
-  const navClickHandler = (e) => {
-    console.log(props.selectedImage.attributes.index.value); // WORK ON THIS FOR MODAL NAVIGATION
-  };
+  // const navClickHandler = (type) => {
+  //   let selectedIndex = props.selectedImage.attributes.index.value;
+  //   console.log(props.selectedImage.attributes.index.value); // WORK ON THIS FOR MODAL NAVIGATION
+  //   if (type === "left") {
+  //     if (selectedIndex === 0) {
+  //       selectedIndex = props.images.length();
+  //     } else {
+  //       selectedIndex -= 1;
+  //     }
+  //     console.log(`selectedIndex: ${selectedIndex}`);
+  //   }
+  // };
 
   return (
     <div className="modal-container">
@@ -38,8 +47,11 @@ const ImageModal = (props) => {
         <button className="btn">Download</button>
       </div>
       <div>
-        <IoIosArrowBack className="nav-arrow" onClick={navClickHandler} />
-        <IoIosArrowForward className="nav-arrow" />
+        {/* <IoIosArrowBack
+          className="nav-arrow"
+          onClick={() => navClickHandler("left")}
+        />
+        <IoIosArrowForward className="nav-arrow" /> */}
         <img className="modal-image" src={props.selectedImage.src} alt="" />
       </div>
       <div className="modal-image-info">

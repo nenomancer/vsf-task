@@ -17,14 +17,14 @@ const ImageGallery = (props) => {
     setShowImageModal(true);
   };
 
-  
-
   return (
     <Fragment>
       {showImageModal && (
         <ImageModal
           selectedImage={selectedImage}
+          setSelectedImage={setSelectedImage}
           setShowImageModal={setShowImageModal}
+          images={props.allImages}
         />
       )}
       <div className="gallery-container">

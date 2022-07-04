@@ -19,8 +19,9 @@ const ImageModal = (props) => {
   // } ${uploadDate.getFullYear()}`;
 
   const closeHandler = () => {
-    props.setShowImageModal(false);
-    document.querySelector("body").style.overflowY = "scroll";
+    // props.setShowImageModal(false);
+    // document.querySelector("body").style.overflowY = "scroll";
+    window.history.back();
   };
 
   document.addEventListener("keydown", (e) => {
@@ -52,7 +53,7 @@ const ImageModal = (props) => {
           onClick={() => navClickHandler("left")}
         />
         <IoIosArrowForward className="nav-arrow" /> */}
-        <img className="modal-image" src={props.selectedImage.src} alt="" />
+        <img className="modal-image" src={props.imageURL} alt="" />
       </div>
       <div className="modal-image-info">
         <p className="label">Uploaded by</p>

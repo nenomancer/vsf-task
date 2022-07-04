@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-
 import ImageGallery from "./components/ImageGallery";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import ImageModal from "./components/ImageModal";
 
 function App() {
   const [allImages, setAllImages] = useState([]);
+  const [imageURL, setImageURL] = useState("");
+  const [selectedImage, setSelectedImage] = useState(0);
+  const [showImageModal, setShowImageModal] = useState(false);
 
   const fetchImages = () => {
     try {
@@ -23,6 +26,9 @@ function App() {
   useEffect(() => {
     fetchImages();
   }, []);
+
+  // console.log(selectedImage.src.slice(15));
+  console.log(`imageURL: ${imageURL}`);
 
   return (
     <div className="App">
@@ -49,7 +55,28 @@ function App() {
       </header>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<ImageGallery allImages={allImages} />} />
+          <Route
+            path="/"
+            element={
+              <ImageGallery
+                allImages={allImages}
+                setSelectedImage={setSelectedImage}
+                setImageURL={setImageURL}
+              />
+            }
+          />
+          <Route
+            path={selectedImage.src}
+            element={
+              <ImageModal
+                selectedImage={selectedImage}
+                imageURL={imageURL}
+                setSelectedImage={setSelectedImage}
+                setShowImageModal={setShowImageModal}
+                images={allImages}
+              />
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>

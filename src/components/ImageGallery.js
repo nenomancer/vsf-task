@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import "./ImageGallery.css";
 import ImageModal from "./ImageModal";
+import { Link } from "react-router-dom";
 
 const ImageGallery = (props) => {
   const [selectedImage, setSelectedImage] = useState(0);
@@ -30,11 +31,14 @@ const ImageGallery = (props) => {
       <div className="gallery-container">
         {props.allImages.map((image, index) => {
           return (
-            <div
-              className="image-container"
-              onClick={imageClickHandler}
-              key={image.id}
-            >
+            // <div
+            //   className="image-container"
+            //   onClick={imageClickHandler}
+            //   key={image.id}
+            // >
+
+            // </div>
+            <a className="image-container" href={image.url} key={image.id}>
               <img
                 className="image"
                 src={image.download_url}
@@ -42,7 +46,7 @@ const ImageGallery = (props) => {
                 author={image.author}
                 index={index}
               />
-            </div>
+            </a>
           );
         })}
       </div>

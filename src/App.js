@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import ImageGallery from "./components/ImageGallery";
 import "./App.css";
 
@@ -45,7 +47,11 @@ function App() {
         </div>
         <button className="btn">My albums</button>
       </header>
-      <ImageGallery allImages={allImages} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<ImageGallery allImages={allImages} />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

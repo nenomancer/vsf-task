@@ -27,9 +27,6 @@ function App() {
     fetchImages();
   }, []);
 
-  // console.log(selectedImage.src.slice(15));
-  console.log(`imageURL: ${imageURL}`);
-
   return (
     <div className="App">
       <header className="header">
@@ -66,11 +63,10 @@ function App() {
             }
           />
           <Route
-            path={selectedImage.src}
+            path={`${localStorage.getItem('selectedID')}`}
             element={
               <ImageModal
                 selectedImage={selectedImage}
-                imageURL={imageURL}
                 setSelectedImage={setSelectedImage}
                 setShowImageModal={setShowImageModal}
                 images={allImages}

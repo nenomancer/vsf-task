@@ -4,7 +4,8 @@ import "./ImageModal.css";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
 const ImageModal = (props) => {
-  const author = props.selectedImage.attributes["author"].value;
+  let author = localStorage.getItem("selectedAuthor");
+  let url = localStorage.getItem("selectedImage");
 
   // ALL THIS FOR RANDOM DATE;
   const maxDate = Date.now();
@@ -48,12 +49,7 @@ const ImageModal = (props) => {
         <button className="btn">Download</button>
       </div>
       <div>
-        {/* <IoIosArrowBack
-          className="nav-arrow"
-          onClick={() => navClickHandler("left")}
-        />
-        <IoIosArrowForward className="nav-arrow" /> */}
-        <img className="modal-image" src={props.imageURL} alt="" />
+        <img className="modal-image" src={url} alt="" />
       </div>
       <div className="modal-image-info">
         <p className="label">Uploaded by</p>

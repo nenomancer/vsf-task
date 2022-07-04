@@ -13,8 +13,6 @@
   gap: var(--gap);
 
   overflow-y: scroll;
-  scrollbar-width: none;
-  
 }
 
 .image-container {

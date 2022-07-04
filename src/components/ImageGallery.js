@@ -12,7 +12,7 @@ const ImageGallery = (props) => {
     console.log(e.target.attributes["index"].value);
 
     // DISABLE SCROLLING ON BODY
-    document.querySelector("body").style.overflowY = "hidden";
+    // document.querySelector("body").style.overflowY = "hidden";
     setSelectedImage(e.target);
     setShowImageModal(true);
   };

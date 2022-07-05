@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import ImageGallery from "./components/ImageGallery";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ImageGallery from "./components/ImageGallery";
 import ImageModal from "./components/ImageModal";
 import SaveImage from "./components/SaveImage";
 import "./App.css";
@@ -60,6 +60,7 @@ function App() {
         <button className="btn">My albums</button>
       </header>
 
+      {/* SHOW SAVE IMAGE MODAL BASED ON A CONDITION */}
       {showSaveImage && <SaveImage setShowSaveImage={setShowSaveImage} />}
 
       {/* USE BROWSER ROUTER TO DYNAMICALLY CHANGE URL */}

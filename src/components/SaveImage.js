@@ -15,7 +15,6 @@ const SaveImage = (props) => {
           <div className="save-option selected">Create new album</div>
           <div className="save-option">Add to existing</div>
         </div>
-        <div className="mid-section">
           <input
             className="album-title"
             type="text"
@@ -23,7 +22,6 @@ const SaveImage = (props) => {
             placeholder="Enter title here"
             value={albumName}
           ></input>
-        </div>
         <div className="bot-section">
           <button className="btn" onClick={() => props.setShowSaveImage(false)}>
             Cancel

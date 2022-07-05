@@ -48,7 +48,6 @@ const ImageModal = (props) => {
           Add to album +
         </button>
         <a className="btn">Download</a>
-        
       </div>
       {/* IMAGE SECTION  */}
       <div className="modal-image">

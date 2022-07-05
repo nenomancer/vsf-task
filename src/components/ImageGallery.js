@@ -1,6 +1,6 @@
-import React, { Fragment, useState } from "react";
-import "./ImageGallery.css";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
+import "./ImageGallery.css";
 
 const ImageGallery = (props) => {
   // SET THE CLICKED IMAGE TO SHOW UP IN THE IMAGE MODAL
@@ -13,11 +13,13 @@ const ImageGallery = (props) => {
     localStorage.setItem("selectedAuthor", e.target.attributes.author.value);
   };
 
+  // DEFINE ARRAYS FOR IMAGES IN SAME COLUMN
   const firstCol = [];
   const secondCol = [];
   const thirdCol = [];
   const length = props.allImages.length;
 
+  // SPLIT ALL IMAGES INTO THREE ARRAYS BASED ON ID
   for (let i = 0; i < length; i++) {
     if (i < length / 3) {
       firstCol.push(props.allImages[i]);

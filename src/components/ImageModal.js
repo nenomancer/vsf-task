@@ -44,12 +44,14 @@ const ImageModal = (props) => {
 
   return (
     <div className="modal-container">
+      {/* BUTTONS FOR SAVING THE IMAGE  */}
       <div className="modal-options">
         <button className="btn-inv">Add to album +</button>
         <button className="btn">Download</button>
       </div>
-      <div>
-        <img className="modal-image" src={url} alt="" />
+      {/* IMAGE SECTION  */}
+      <div className="modal-image">
+        <img src={url} alt="" />
       </div>
       <div className="modal-image-info">
         <p className="label">Uploaded by</p>

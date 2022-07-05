@@ -1,0 +1,56 @@
+.new-album-container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: 20;
+ 
+}
+
+.form-container {
+  width: 50vw;
+  /* height: 50vh; */
+
+  background-color: white;
+  border: 1px solid rebeccapurple;
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+}
+.top-section {
+    padding-top: 6rem;
+}
+
+.mid-section {
+    padding-top: 1rem;
+}
+
+.bot-section {
+  padding: 4rem 0;
+}
+
+.save-option {
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 1rem 1rem;
+  margin: 0.5rem;
+  color: #9d9d9d;
+}
+
+.album-title {
+  font-size: 24px;
+  text-align: center;
+  padding: 1rem;
+  border: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.album-title:focus {
+    outline: none;
+}

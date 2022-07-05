@@ -100,7 +100,7 @@ const ImageGallery = (props) => {
                 {/* ADD TO ALBUM BUTTON */}
                 <div
                   className="add-to-album"
-                  onClick={() => console.log("clicked")}
+                  onClick={() => props.setShowSaveImage(true)}
                 >
                   Add to album
                 </div>

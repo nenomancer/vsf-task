@@ -3,14 +3,16 @@ import ImageGallery from "./components/ImageGallery";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import ImageModal from "./components/ImageModal";
+import SaveImage from "./components/SaveImage";
 
 function App() {
   const [allImages, setAllImages] = useState([]);
   const [imageURL, setImageURL] = useState("");
   const [selectedImage, setSelectedImage] = useState(0);
   const [showImageModal, setShowImageModal] = useState(false);
+  const [showSaveImage, setShowSaveImage] = useState(false);
 
-  // FETCH IMAGES FROM PICSUM
+  // DEFINE FUNCTION TO FETCH IMAGES FROM PICSUM
   const fetchImages = () => {
     try {
       // FETCH EXACTLY 12 IMAGES
@@ -28,15 +30,18 @@ function App() {
     }
   };
 
+  // FETCH IMAGES ON LOAD
   useEffect(() => {
     fetchImages();
   }, []);
+
+  
 
   return (
     <div className="App">
       <header className="header">
         {/* SITE LOGO  */}
-        <div className="logo">
+        <a href="/" className="logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="128.594"
@@ -53,9 +58,12 @@ function App() {
               strokeWidth="1"
             />
           </svg>
-        </div>
+        </a>
         <button className="btn">My albums</button>
       </header>
+
+      {showSaveImage && <SaveImage />}
+
 
       {/* USE BROWSER ROUTER TO DYNAMICALLY CHANGE URL */}
       <BrowserRouter>
@@ -69,18 +77,20 @@ function App() {
                 allImages={allImages}
                 setSelectedImage={setSelectedImage}
                 setImageURL={setImageURL}
+                setShowSaveImage={setShowSaveImage}
+                />
+              }
               />
-            }
-          />
           {/* RENDER IMAGE MODAL WITH IMAGE ID AS PATH */}
           <Route
             path={`${localStorage.getItem("selectedID")}`}
             element={
               <ImageModal
-                selectedImage={selectedImage}
-                setSelectedImage={setSelectedImage}
-                setShowImageModal={setShowImageModal}
-                images={allImages}
+              selectedImage={selectedImage}
+              setSelectedImage={setSelectedImage}
+              setShowImageModal={setShowImageModal}
+              images={allImages}
+              setShowSaveImage={setShowSaveImage}
               />
             }
           />

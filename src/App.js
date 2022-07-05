@@ -35,8 +35,6 @@ function App() {
     fetchImages();
   }, []);
 
-  
-
   return (
     <div className="App">
       <header className="header">
@@ -62,8 +60,7 @@ function App() {
         <button className="btn">My albums</button>
       </header>
 
-      {showSaveImage && <SaveImage />}
-
+      {showSaveImage && <SaveImage setShowSaveImage={setShowSaveImage} />}
 
       {/* USE BROWSER ROUTER TO DYNAMICALLY CHANGE URL */}
       <BrowserRouter>
@@ -78,19 +75,19 @@ function App() {
                 setSelectedImage={setSelectedImage}
                 setImageURL={setImageURL}
                 setShowSaveImage={setShowSaveImage}
-                />
-              }
               />
+            }
+          />
           {/* RENDER IMAGE MODAL WITH IMAGE ID AS PATH */}
           <Route
             path={`${localStorage.getItem("selectedID")}`}
             element={
               <ImageModal
-              selectedImage={selectedImage}
-              setSelectedImage={setSelectedImage}
-              setShowImageModal={setShowImageModal}
-              images={allImages}
-              setShowSaveImage={setShowSaveImage}
+                selectedImage={selectedImage}
+                setSelectedImage={setSelectedImage}
+                setShowImageModal={setShowImageModal}
+                images={allImages}
+                setShowSaveImage={setShowSaveImage}
               />
             }
           />

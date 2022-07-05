@@ -10,8 +10,8 @@ const SaveImage = (props) => {
     <div className="new-album-container">
       <div className="form-container">
         <div className="top-section">
-          <span className="save-option">Create new album</span>
-          <span className="save-option">Add to existing</span>
+          <div className="save-option selected" >Create new album</div>
+          <div className="save-option">Add to existing</div>
         </div>
         <div className="mid-section">
           <input
@@ -22,7 +22,9 @@ const SaveImage = (props) => {
           ></input>
         </div>
         <div className="bot-section">
-          <button className="btn">Cancel</button>
+          <button className="btn" onClick={() => props.setShowSaveImage(false)}>
+            Cancel
+          </button>
           <button className="btn-inv">Save</button>
         </div>
       </div>

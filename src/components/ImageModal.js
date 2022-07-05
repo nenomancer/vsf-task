@@ -46,7 +46,12 @@ const ImageModal = (props) => {
     <div className="modal-container">
       {/* BUTTONS FOR SAVING THE IMAGE  */}
       <div className="modal-options">
-        <button className="btn-inv">Add to album +</button>
+        <button
+          className="btn-inv"
+          onClick={() => props.setShowSaveImage(true)}
+        >
+          Add to album +
+        </button>
         <button className="btn">Download</button>
       </div>
       {/* IMAGE SECTION  */}

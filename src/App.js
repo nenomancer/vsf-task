@@ -10,13 +10,18 @@ function App() {
   const [selectedImage, setSelectedImage] = useState(0);
   const [showImageModal, setShowImageModal] = useState(false);
 
+  // FETCH IMAGES FROM PICSUM
   const fetchImages = () => {
     try {
-      return fetch(`https://picsum.photos/v2/list?limit=12`, {
-        method: "GET",
-      })
-        .then((response) => response.json())
-        .then((data) => setAllImages(data));
+      // FETCH EXACTLY 12 IMAGES
+      return (
+        fetch(`https://picsum.photos/v2/list?limit=12`, {
+          method: "GET",
+        })
+          .then((response) => response.json())
+          // SET THE FETCHED IMAGES AS allImages
+          .then((data) => setAllImages(data))
+      );
     } catch (err) {
       console.log(err);
       return err;
@@ -30,6 +35,7 @@ function App() {
   return (
     <div className="App">
       <header className="header">
+        {/* SITE LOGO  */}
         <div className="logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -50,8 +56,12 @@ function App() {
         </div>
         <button className="btn">My albums</button>
       </header>
+
+      {/* USE BROWSER ROUTER TO DYNAMICALLY CHANGE URL */}
       <BrowserRouter>
+        {/* DEFINE ROUTES  */}
         <Routes>
+          {/* RENDER GALLERY AS DEFAULT ROUTE  */}
           <Route
             path="/"
             element={
@@ -62,8 +72,9 @@ function App() {
               />
             }
           />
+          {/* RENDER IMAGE MODAL WITH IMAGE ID AS PATH */}
           <Route
-            path={`${localStorage.getItem('selectedID')}`}
+            path={`${localStorage.getItem("selectedID")}`}
             element={
               <ImageModal
                 selectedImage={selectedImage}

@@ -62,7 +62,6 @@ const ImageModal = (props) => {
           Go back
         </button>
       </div>
-      <div className="backdrop"></div>
     </div>
   );
 };

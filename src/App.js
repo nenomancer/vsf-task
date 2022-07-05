@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import ImageGallery from "./components/ImageGallery";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
 import ImageModal from "./components/ImageModal";
 import SaveImage from "./components/SaveImage";
+import "./App.css";
 
 function App() {
   const [allImages, setAllImages] = useState([]);

@@ -139,7 +139,6 @@ const ImageGallery = (props) => {
             );
           })}
         </div>
-        {/* {props.allImages.map((image) => {})} */}
       </div>
     </Fragment>
   );

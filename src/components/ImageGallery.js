@@ -34,11 +34,7 @@ const ImageGallery = (props) => {
         <div className="column">
           {firstCol.map((image) => {
             return (
-              <div
-                className="image-container"
-                onClick={imageClickHandler}
-                key={image.id}
-              >
+              <div className="image-container" key={image.id}>
                 {/* ADD TO ALBUM BUTTON */}
                 <div
                   className="add-to-album"
@@ -49,6 +45,7 @@ const ImageGallery = (props) => {
                 {/* RENDER EACH IMAGE AS A LINK ELEMENT (REACT ROUTER) */}
                 <Link to={image.id} className="image-container">
                   <img
+                    onClick={imageClickHandler}
                     className="image"
                     src={image.download_url}
                     alt={image.author}

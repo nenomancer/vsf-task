@@ -29,7 +29,7 @@
   overflow: hidden;
 }
 
-.image-container div {
+.add-to-album {
   position: absolute;
   background-color: black;
   bottom: 0;
@@ -45,7 +45,7 @@
   z-index: 10;
   transition: all 250ms linear;
 }
-.image-container div:hover {
+.add-to-album:hover {
   background-color: #111;
 }
 
@@ -53,6 +53,7 @@
   display: block;
   opacity: 1;
 }
+
 .image-container:hover .image {
   transform: scale(1.2);
 }

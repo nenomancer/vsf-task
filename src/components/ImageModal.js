@@ -1,8 +1,6 @@
 import React from "react";
 import "./ImageModal.css";
 
-import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-
 const ImageModal = (props) => {
   let author = localStorage.getItem("selectedAuthor");
   let url = localStorage.getItem("selectedImage");
@@ -15,9 +13,6 @@ const ImageModal = (props) => {
     month: "long",
     year: "numeric",
   });
-  // const uploadYear = `${
-  //   weekday[uploadDate.getDay()]
-  // } ${uploadDate.getFullYear()}`;
 
   const closeHandler = () => {
     // props.setShowImageModal(false);
@@ -52,7 +47,8 @@ const ImageModal = (props) => {
         >
           Add to album +
         </button>
-        <button className="btn">Download</button>
+        <a className="btn">Download</a>
+        
       </div>
       {/* IMAGE SECTION  */}
       <div className="modal-image">

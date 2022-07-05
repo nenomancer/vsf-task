@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SaveImage.css";
 
 const SaveImage = (props) => {
+  const [albumName, setAlbumName] = useState("");
   const inputChangeHandler = (e) => {
+    setAlbumName(e.target.value);
     console.log(e.target.value);
   };
 
@@ -10,7 +12,7 @@ const SaveImage = (props) => {
     <div className="new-album-container">
       <div className="form-container">
         <div className="top-section">
-          <div className="save-option selected" >Create new album</div>
+          <div className="save-option selected">Create new album</div>
           <div className="save-option">Add to existing</div>
         </div>
         <div className="mid-section">
@@ -18,7 +20,8 @@ const SaveImage = (props) => {
             className="album-title"
             type="text"
             onChange={inputChangeHandler}
-            defaultValue="Enter title here"
+            placeholder="Enter title here"
+            value={albumName}
           ></input>
         </div>
         <div className="bot-section">

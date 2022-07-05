@@ -17,9 +17,9 @@
 }
 
 .modal-image img {
-  max-width: 100%;
+  max-width: 70vmin;
   min-width: 60vw;
-  max-height: 60vh;
+  max-height: 70vmin;
   object-fit: contain;
 }
 

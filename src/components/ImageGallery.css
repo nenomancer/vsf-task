@@ -2,7 +2,7 @@
   width: var(--width);
   margin: 0 auto;
   margin-top: var(--gap);
-  height: calc(100vh - var(--header-height) * 2);
+  max-height: calc(100vh - var(--header-height) * 2);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
@@ -14,18 +14,19 @@
   --short: 150px;
   --tall: 300px;
   display: grid;
-  grid-template-rows: var(--short) var(--tall) var(--short) var(--tall);
+  grid-template-rows: repeat(auto-fill, var(--short) var(--tall));
   gap: var(--gap);
 }
 
 .column:nth-child(2) {
-  grid-template-rows: var(--tall) var(--short) var(--tall) var(--short);
+  grid-template-rows: repeat(auto-fill, var(--tall) var(--short));
 }
 
 .image-container {
   position: relative;
   cursor: pointer;
   overflow: hidden;
+  display: flex;
 }
 
 .add-to-album {

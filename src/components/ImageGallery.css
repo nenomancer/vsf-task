@@ -5,21 +5,20 @@
   max-height: calc(100vh - var(--header-height) * 2);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
   gap: var(--gap);
   overflow-y: scroll;
 }
 
 .column {
-  --short: 150px;
-  --tall: 300px;
+  --short: 200px;
+  --tall: 400px;
   display: grid;
-  grid-template-rows: repeat(auto-fill, var(--short) var(--tall));
+  grid-template-rows: var(--short) var(--tall) var(--short) var(--tall);
   gap: var(--gap);
 }
 
 .column:nth-child(2) {
-  grid-template-rows: repeat(auto-fill, var(--tall) var(--short));
+  grid-template-rows: var(--tall) var(--short) var(--tall) var(--short);
 }
 
 .image-container {

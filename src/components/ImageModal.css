@@ -1,11 +1,10 @@
 .modal-container {
   z-index: 10;
-  max-height: calc(100vh - var(--header-height));
+  height: calc(100vh - var(--header-height));
   max-width: var(--width);
   overflow-y: scroll;
   display: grid;
-  padding: 1rem;
-  grid-template-rows: 1fr 5fr 2fr;
+  grid-template-rows: 1fr 5fr 2 fr;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -14,6 +13,7 @@
 
 .modal-options {
   width: 100%;
+  align-self: end;
 }
 
 .modal-image img {

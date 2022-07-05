@@ -6,4 +6,5 @@ The main layout is a three column grid of equal parts. Each column has a grid la
 
 I used react-router-dom to dynamically change the URL based on the ID of the clicked image. A new screen shows with the whole image in it's original aspect ration, along with a couple of buttons (only the 'back' button works for now).
 
-The image ID, source, and author name are saved to local storage on click, in order for the browser to keep showing the same information after refreshing the page.
+The image ID, source, and author name are saved to local storage on click, in order for the browser to keep showing the same information after refreshing the page. 
+

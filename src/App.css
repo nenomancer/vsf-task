@@ -28,6 +28,7 @@ body {
   letter-spacing: 0.5px;
 }
 
+
 .header {
   height: var(--header-height);
   position: relative;

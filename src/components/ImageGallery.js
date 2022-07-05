@@ -13,33 +13,112 @@ const ImageGallery = (props) => {
     localStorage.setItem("selectedAuthor", e.target.attributes.author.value);
   };
 
+  const firstCol = [];
+  const secondCol = [];
+  const thirdCol = [];
+  const length = props.allImages.length;
+
+  for (let i = 0; i < length; i++) {
+    if (i < length / 3) {
+      firstCol.push(props.allImages[i]);
+    } else if (i < (length / 3) * 2) {
+      secondCol.push(props.allImages[i]);
+    } else {
+      thirdCol.push(props.allImages[i]);
+    }
+  }
   return (
     <Fragment>
       <div className="gallery-container">
         {/* RENDER ALL IMAGES  */}
-        {props.allImages.map((image) => {
-          return (
-            <div className="image-container" onClick={imageClickHandler}>
-              {/* ADD TO ALBUM BUTTON */}
+        <div className="column">
+          {firstCol.map((image) => {
+            return (
               <div
-                className="add-to-album"
-                onClick={() => console.log("clicked")}
+                className="image-container"
+                onClick={imageClickHandler}
+                key={image.id}
               >
-                Add to album
+                {/* ADD TO ALBUM BUTTON */}
+                <div
+                  className="add-to-album"
+                  onClick={() => console.log("clicked")}
+                >
+                  Add to album
+                </div>
+                {/* RENDER EACH IMAGE AS A LINK ELEMENT (REACT ROUTER) */}
+                <Link to={image.id} className="image-container">
+                  <img
+                    className="image"
+                    src={image.download_url}
+                    alt={image.author}
+                    author={image.author}
+                    id={image.id}
+                  />
+                </Link>
               </div>
-              {/* RENDER EACH IMAGE AS A LINK ELEMENT (REACT ROUTER) */}
-              <Link to={image.id} className="image-container" key={image.id}>
-                <img
-                  className="image"
-                  src={image.download_url}
-                  alt={image.author}
-                  author={image.author}
-                  id={image.id}
-                />
-              </Link>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
+        <div className="column">
+          {secondCol.map((image) => {
+            return (
+              <div
+                className="image-container"
+                onClick={imageClickHandler}
+                key={image.id}
+              >
+                {/* ADD TO ALBUM BUTTON */}
+                <div
+                  className="add-to-album"
+                  onClick={() => console.log("clicked")}
+                >
+                  Add to album
+                </div>
+                {/* RENDER EACH IMAGE AS A LINK ELEMENT (REACT ROUTER) */}
+                <Link to={image.id} className="image-container">
+                  <img
+                    className="image"
+                    src={image.download_url}
+                    alt={image.author}
+                    author={image.author}
+                    id={image.id}
+                  />
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+        <div className="column">
+          {thirdCol.map((image) => {
+            return (
+              <div
+                className="image-container"
+                onClick={imageClickHandler}
+                key={image.id}
+              >
+                {/* ADD TO ALBUM BUTTON */}
+                <div
+                  className="add-to-album"
+                  onClick={() => console.log("clicked")}
+                >
+                  Add to album
+                </div>
+                {/* RENDER EACH IMAGE AS A LINK ELEMENT (REACT ROUTER) */}
+                <Link to={image.id} className="image-container">
+                  <img
+                    className="image"
+                    src={image.download_url}
+                    alt={image.author}
+                    author={image.author}
+                    id={image.id}
+                  />
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+        {/* {props.allImages.map((image) => {})} */}
       </div>
     </Fragment>
   );

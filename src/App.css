@@ -47,6 +47,7 @@ body {
 
 .btn,
 .btn-inv {
+  display: inline-block;
   font-size: 14px;
   text-transform: uppercase;
   max-width: max-content;

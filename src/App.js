@@ -9,7 +9,6 @@ function App() {
   const [allImages, setAllImages] = useState([]);
   const [imageURL, setImageURL] = useState("");
   const [selectedImage, setSelectedImage] = useState(0);
-  const [showImageModal, setShowImageModal] = useState(false);
   const [showSaveImage, setShowSaveImage] = useState(false);
 
   // DEFINE FUNCTION TO FETCH IMAGES FROM PICSUM
@@ -65,8 +64,8 @@ function App() {
               <ImageModal
                 selectedImage={selectedImage}
                 setSelectedImage={setSelectedImage}
-                setShowImageModal={setShowImageModal}
                 images={allImages}
+                imageURL={imageURL}
                 setShowSaveImage={setShowSaveImage}
               />
             }

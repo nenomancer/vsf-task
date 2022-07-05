@@ -15,14 +15,8 @@ const ImageModal = (props) => {
   });
 
   const closeHandler = () => {
-    // props.setShowImageModal(false);
-    // document.querySelector("body").style.overflowY = "scroll";
     window.history.back();
   };
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") props.setShowImageModal(false);
-  });
 
   // const navClickHandler = (type) => {
   //   let selectedIndex = props.selectedImage.attributes.index.value;
@@ -70,7 +64,7 @@ const ImageModal = (props) => {
           >
             Add to album +
           </button>
-          <a className="btn">Download</a>
+          <div className="btn">Download</div>
         </div>
         {/* IMAGE SECTION  */}
         <div className="modal-image">

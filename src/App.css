@@ -25,7 +25,7 @@ body {
 
 .header {
   height: var(--header-height);
-  position: fixed;
+  position: relative;
   width: 100%;
   background-color: black;
   color: white;
@@ -33,7 +33,7 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 15;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
 }
 
 .header button {

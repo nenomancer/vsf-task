@@ -1,3 +1,5 @@
+# VALSTOCK
+
 This is my solution for a frontend developer task, made with React and CSS.
 
 I used fetch() to get 12 images from picsum and store them in an object array. The array is iterated over and split into 3 arrays, each containing the images which will be placed into the main 3 columns.

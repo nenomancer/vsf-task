@@ -8,3 +8,4 @@ I used react-router-dom to dynamically change the URL based on the ID of the cli
 
 The image ID, source, and author name are saved to local storage on click, in order for the browser to keep showing the same information after refreshing the page. 
 
+# https://valstock.netlify.app/
